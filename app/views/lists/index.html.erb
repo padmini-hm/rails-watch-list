@@ -1,10 +1,9 @@
-<div>
-<h2> My list</h2>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list.id) %></li>
-  <% end %>
-</ul>
-  <%= link_to 'New list', new_list_path %>
-
+<div style = "color: red; background-img: url('../../assets/images/movie.png');">
+  <h2> My list</h2>
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list_path(list.id) %></li>
+    <% end %>
+  </ul>
+    <%= link_to 'New list', new_list_path %>
 </div>
