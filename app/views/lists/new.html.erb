@@ -1,9 +1,12 @@
+<div style= "background-color:powderblue;">
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
 
-<%= form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
 
 <%= link_to 'Back to list page', lists_path %>
  <div class="movie"> </div>
+
+</div>

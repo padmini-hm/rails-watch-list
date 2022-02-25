@@ -3,8 +3,9 @@
   <ul>
     <% @lists.each do |list| %>
       <li><%= link_to list.name, list_path(list.id) %></li>
-      <%= cl_image_tag("fxjwjwnh6vqmnjl7w9y5",
+      <%# <%= cl_image_tag("fxjwjwnh6vqmnjl7w9y5",
       width: 200, height: 200, crop: :fill) %>
+
     <% end %>
   </ul>
     <%= link_to 'New list', new_list_path %>

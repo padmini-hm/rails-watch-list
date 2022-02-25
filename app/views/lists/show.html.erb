@@ -1,5 +1,9 @@
 
 <h2><%= @list.name %></h2>
+<% @list.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <h5>Comments</h5>
 <% @list.bookmarks.each do |bookmark| %>
   <div style="border: solid 1px gray">
