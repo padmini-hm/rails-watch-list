@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   # get 'lists', to: "lists#index", as: :lists
   # get 'lists/new', to: "lists#new", as: :list_new
   # get 'list/:id', to: "lists#show", as: :list
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   # post 'bookmarks' to: "bookmarks#create",
   # delete "bookmarks/:id", to: "bookmarks#destroy"
   # # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "lists#index"
+  root to: "pages#home"
   resources :lists, only: [:index, :new, :create, :show] do
     resources :bookmarks, only: [ :new, :create ]
   end
