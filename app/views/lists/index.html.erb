@@ -1,9 +1,17 @@
-
-<h2> My lists</h2>
-<div data-controller="sortable" data-sortable-target="list">
+<div class = "mt-5">
+<br>
+</div>
+<div class = "d-flex justify-content-around">
   <% @lists.each do |list| %>
-  <div  class="sortable-draggable">
-    <h4><%= link_to list.name, list_path(list.id) %> </h4>
+  <div class="card" style="width: 18rem;">
+    <% list.photos.each do |photo| %>
+      <div class="card-body">
+        <%= cl_image_tag photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill %>
+        <a href = <% list_path(list.id) %>  class = "btn btn-primary">
+          <div class="card-text"> <h3> <%= list.name %> <h3> </div>
+        </a>
+      </div>
+    <% end %>
   </div>
-   <% end %>
+  <% end %>
 </div>

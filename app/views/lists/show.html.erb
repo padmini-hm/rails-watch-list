@@ -1,26 +1,23 @@
-<div class="container mt-3">
-  <br>
-</div>
-<div class="container bg-white mt-5">
-<div class="card" style="width: 18rem;">
-  <% if !@list.photos.empty? %>
-        <% @list.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill %>
-        <% end %>
-
-        <div class="card-body">
-          <h5 class="card-title"><%= @list.name %></h5>
-          <% @list.bookmarks.each do |bookmark| %>
-            <p class="card-text"> <%= bookmark.comment %> </p>
-            <%= link_to "Delete", bookmark_path(bookmark), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
+<%# <div class="container mt-50"> %>
+  <div class="container">
+    <% if !@list.photos.empty? %>
+      <div class="card" style="width: 18rem;">
+          <% @list.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, class: "card-img-top", height: 300, width: 400, crop: :fill %>
           <% end %>
 
-          <ul>
-            <li> <%= link_to 'Back', lists_path %> </li>
-            <li> <%= link_to 'Bookmark', new_list_bookmark_path(@list) %> </li>
-          </ul>
+          <div class="card-body">
+            <h5 class="card-title"><%= @list.name %></h5>
+            <% @list.bookmarks.each do |bookmark| %>
+              <p class="card-text"> <%= bookmark.comment %> </p>
+              <%= link_to "Delete", bookmark_path(bookmark), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
+          </div>
+            <ul>
+              <li> <%= link_to 'Back', lists_path %> </li>
+              <li> <%= link_to 'Bookmark', new_list_bookmark_path(@list) %> </li>
+            </ul>
 
-        </div>
-  <%end%>
-</div>
-</div>
+      </div>
+    <%end%>
+  </div>
